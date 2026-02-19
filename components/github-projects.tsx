@@ -17,7 +17,7 @@ interface GitHubRepo {
 /**
  * GitHubProjects Component
  * Displays a grid of your GitHub repositories with real-time data
- * Fetches projects from GitHub API and displays them with stars, language, and links
+ * Fetches projects from GitHub API and displays them with stars, language, and links.
  */
 export default function GitHubProjects() {
   const [repos, setRepos] = useState<GitHubRepo[]>([])
