@@ -29,15 +29,20 @@ export function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      // Replace with your actual form submission endpoint
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-      console.log("Form submitted:", formData)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", message: "" })
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
 
       // Reset status after 3 seconds
       setTimeout(() => setSubmitStatus("idle"), 3000)
