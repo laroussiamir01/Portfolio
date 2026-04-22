@@ -98,7 +98,7 @@ export const featuredProjects: FeaturedProject[] = [
       },
       {
         alt: "IA1",
-        src: "/ia1.png",
+        src: "/IA1.png",
       },
     ],
   },
