@@ -14,9 +14,52 @@ export interface FeaturedProject {
   dateRange: string
   company?: string
   github?: string
+  website?: string
+  websitetitle?: string
 }
 
 export const featuredProjects: FeaturedProject[] = [
+  {
+  id: "caffebrg-platform",
+  title: "CaffeBRG : Plateforme de gestion de café (Next.js + Prisma)",
+  description:
+    "Plateforme full-stack pour café/restaurant — POS avec déduction atomique du stock, gestion d'inventaire avec coût moyen pondéré, recettes, dépenses, rapports CSV compatibles Excel fr-TN, et audit log.",
+  longDescription:
+    "Conception et développement d'une plateforme web complète pour la gestion opérationnelle d'un café à Tunis. Couvre le point de vente (POS), la gestion de stock avec calcul du coût moyen pondéré à chaque achat, un moteur de recettes avec conversion d'unités, la comptabilité (dépenses, bénéfice net), les rapports financiers avec export CSV conforme aux locales françaises et tunisiennes d'Excel, et un journal d'audit complet. Authentification NextAuth avec RBAC à deux rôles (ADMIN / STAFF) et protection server-side des routes sensibles via middleware.",
+  technologies: [
+    "Next.js 14", "TypeScript", "React Server Components", "Prisma",
+    "PostgreSQL", "Supabase", "NextAuth", "Tailwind CSS", "bcrypt",
+    "Server Actions", "RBAC", "Vercel", "Transaction Pooler"
+  ],
+  dateRange: "2026",
+  company: "CaffeBRG (Tunis)",
+  github: "https://github.com/laroussiamir01/CaffeBRG",
+  website: "https://caffe-brg.vercel.app/",
+  websitetitle: "Caffe BRG Platforme",
+  keyFeatures: [
+    "Point de vente (POS) avec déduction atomique du stock via recettes et annulation de vente qui restaure intégralement le stock",
+    "Gestion de stock complète : CRUD articles, fournisseurs, achats avec coût moyen pondéré, usage, gaspillage, ajustements, alertes stock bas et historique des mouvements",
+    "Moteur de recettes avec conversion d'unités (G ↔ KG, ML ↔ L) et calcul automatique du coût matière et du bénéfice par article vendu",
+    "Comptabilité : dépenses par catégorie, KPIs tableau de bord temps réel (revenu, bénéfice brut, dépenses du jour, bénéfice net)",
+    "Rapports avec export CSV compatible Excel fr-FR / fr-TN (séparateur « ; », décimales « , », directive sep=;, BOM UTF-8, quoting RFC 4180)",
+    "Sécurité : authentification NextAuth + bcrypt, RBAC appliqué côté serveur (middleware + route guards), journal d'audit de toutes les mutations métier",
+    "UI 100 % française avec devise DT (Dinar tunisien) formatée à 3 décimales, menu public rendu directement depuis PostgreSQL",
+    "Déploiement Vercel + Supabase Transaction Pooler (port 6543, pgbouncer, connection_limit=1) pour scalabilité serverless sans épuisement du pool"
+  ],
+  screenshots: [
+    { alt: "Tableau de bord administrateur avec KPIs", src: "/BRG/1.png" },
+    { alt: "Point de vente (POS) avec panier et déduction automatique du stock", src: "/BRG/2.png" },
+    { alt: "Gestion du stock avec historique des mouvements", src: "/BRG/3.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/4.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/5.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/6.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/7.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/8.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/9.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/10.png" },
+    { alt: "Rapports financiers avec export CSV", src: "/BRG/11.png" },
+  ],
+},
   {
     id: "bns-automation",
     title: "PROJET DE FIN D'ÉTUDES",
@@ -26,6 +69,8 @@ export const featuredProjects: FeaturedProject[] = [
     technologies: ["Spring Boot", "Angular", "Drools 8", "Camunda", "React.js" , "NextJS", "Fine-Tuning", "NLP", "Hugging Face", "Docker", "Jenkins", "Microservices", "Eureka/API Gateway", "Keycloak","MySQL/PostgreSQL"],
     dateRange: "Feb 2025 - Aug 2025",
     company: "BNS ENGINEERING",
+    website: "https://v0-drools.vercel.app/",
+    websitetitle: "Aperçu de partie IA",
     keyFeatures: [
       "Conception et implémentation d'un système CRUD complet pour la gestion des règles métier avec versioning et suspension programmée",
       "Orchestration complète des processus de commerce extérieur avec suivi en temps réel et monitoring",

@@ -50,6 +50,35 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             <p className="text-sm text-muted-foreground mb-1">Durée du projet</p>
             <p className="text-foreground font-medium">{project.dateRange}</p>
           </div>
+          {/* Github */}
+          {project.github && (
+  <div>
+    <p className="text-sm text-muted-foreground mb-1">Lien GitHub</p>
+    <p className="text-foreground font-medium">
+      <a 
+        href={project.github} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="hover:text-accent transition-colors"
+      >
+        {project.github}
+      </a>
+    </p>
+  </div>
+)}
+{project.website && (<div>
+    <p className="text-sm text-muted-foreground mb-1">Lien du site web</p>
+    <p className="text-foreground font-medium">
+      <a 
+        href={project.website} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="hover:text-accent transition-colors"
+      >
+        {project.website}
+      </a>
+    </p>
+  </div>)}
 
           {/* Description */}
           <div>

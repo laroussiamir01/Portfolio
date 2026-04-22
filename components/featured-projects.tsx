@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { featuredProjects } from "@/lib/projects-data"
+import { featuredProjects, type FeaturedProject } from "@/lib/projects-data"
 import { ProjectModal } from "./project-modal"
 import { ExternalLink } from "lucide-react"
 
 export function FeaturedProjects() {
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<FeaturedProject | null>(null)
 
   return (
     <>
@@ -54,6 +54,24 @@ export function FeaturedProjects() {
                 <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
+           {project.website && (
+  <div className="flex items-center gap-1 mt-4 text-accent text-sm font-medium">
+    <p className="text-sm text-muted-foreground mb-1">
+      visiter le site web
+    </p>
+
+    <p className="text-foreground font-medium">
+      <a 
+        href={project.website} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="hover:text-accent transition-colors"
+      >
+      {project.websitetitle}
+      </a>
+    </p>
+  </div>
+)}
           </button>
         ))}
       </div>
